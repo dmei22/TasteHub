@@ -2,9 +2,6 @@ package nl.miwnn.ch16.tastehub.TasteHub.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
-
 @Entity
 public class Recipe {
 
@@ -14,10 +11,14 @@ public class Recipe {
 
     private String recipeName;
 
-    @ElementCollection
-    private List<String> ingredients;
-
+    @Column(columnDefinition = "TEXT")
     private String description;
+
+    @Column(columnDefinition = "TEXT")
+    private String ingredients;
+
+    @Column(columnDefinition = "TEXT")
+    private String instructions;
 
     public Long getRecipeId() {
         return recipeId;
@@ -35,19 +36,27 @@ public class Recipe {
         this.recipeName = recipeName;
     }
 
-    public List<String> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<String> ingredients) {
-        this.ingredients = ingredients;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
     }
 }
