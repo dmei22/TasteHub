@@ -1,0 +1,24 @@
+
+<!--Loop through allRecipes-->
+<div th:fragment="recipeCards(allRecipes)">
+    <div class="container">
+        <div class="row row-cols-xl-4">
+            <!--Insert into every iteration recipeCard-->
+            <div th:each="recipe : ${allRecipes}" th:insert="~{:: recipeCard(recipe)}"></div>
+        </div>
+    </div>
+</div>
+
+<!--recipeCard-->
+<div th:fragment="recipeCard(recipe)">
+
+    <div class="col mb-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title text-center" th:text="${recipe.recipeName}"></div>
+                <div class="card-text text-center" th:text="${recipe.description}"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

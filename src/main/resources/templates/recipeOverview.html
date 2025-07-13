@@ -8,9 +8,7 @@
 
 <div class="container">
 
-    <span th:each="recipe : ${allRecipes}">
-        <span th:text="${recipe.recipeName}"></span>
-    </span>
+    <div th:replace="~{fragments/recipe :: recipeCards(${allRecipes})}"></div>
 
 </div>
 
